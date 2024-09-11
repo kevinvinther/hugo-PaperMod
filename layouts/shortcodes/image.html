@@ -1,0 +1,7 @@
+{{ $imagePath := printf "images/%s" (.Get 0) }}
+{{ $image := resources.Get $imagePath }}
+{{ if $image }}
+  <img src="{{ $image.Permalink }}" alt="Image description">
+{{ else }}
+  <p>Image not found</p>
+{{ end }}
